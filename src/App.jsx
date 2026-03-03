@@ -1,9 +1,10 @@
 import './App.css'
 import users from "./data/users.json"
 import UserCard from './components/UserCard'
+import React, { useMemo } from 'react'
 
 function App({ filter }) {
-  const filteredUsers = users.filter(user => user?.['job-role'] === filter)
+  const filteredUsers = useMemo(() => users.filter(user => user?.['job-role'] === filter), [users, filter])
 
   return (
     <div>
@@ -14,4 +15,4 @@ function App({ filter }) {
   )
 }
 
-export default App
+export default React.memo(App)

@@ -1,3 +1,5 @@
+import React from "react"
+
 const UserCard = ({ user }) => {
     return (
         <>
@@ -21,4 +23,4 @@ const UserCard = ({ user }) => {
     )
 }
 
-export default UserCard
+export default React.memo(UserCard)
